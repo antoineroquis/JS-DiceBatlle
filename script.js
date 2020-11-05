@@ -5,10 +5,10 @@ const rollDice = playerindex =>{
   scores[1][playerindex] = scoreDice
 } 
 
-for (let counter = 0; counter < scores[0].length; counter++){
-  rollDice(counter);
-  console.log(counter);
-  console.log(scores[1][counter]);
+for (let i = 0; i < scores[0].length; i++){
+  rollDice(i);
+  console.log(i);
+  console.log(scores[1][i]);
 }
 
 if (scores[1][0] > scores[1][1]) {
