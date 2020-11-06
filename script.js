@@ -1,21 +1,26 @@
-const scores = [['Antoine', 'Alexandre'], [0,0]] 
+// Définition joueurs, setup variables scores
+const players = ['Antoine', 'Alexandre']
+let scores = [0,0]
 
-const rollDice = playerindex =>{
-  let scoreDice = Math.floor(Math.random() * 6) + 1 
-  scores[1][playerindex] = scoreDice
-} 
-
-for (let i = 0; i < scores[0].length; i++){
-  rollDice(i);
-  console.log(i);
-  console.log(scores[1][i]);
+/* Fonction rollDice 
+- Définit  le score de dé du joueur (entier random entre 1 et 6)
+- Log le résultat + assigne sa valeur dans l'array scores, à l'index du joueur*/
+const rollDice = player =>{
+  let scoreDice = Math.floor(Math.random() * 6) + 1
+  console.log(scoreDice)
+  scores[players.indexOf(player)] = scoreDice
 }
 
-if (scores[1][0] > scores[1][1]) {
-  console.log(`${scores[0][0]} a gagné`);
-} else if (scores[1][0] === scores[1][1]){
+// Lance fonction rolleDice pour chaque joueur de l'array players
+players.forEach(player => rollDice(player));
+
+// Compare le scores de dé chaque joueur + annonce le vainqueur ou égalité
+if (scores[0] > scores[1]) {
+  console.log(`${players[0]} a gagné`);
+} else if (scores[0] === scores[1]){
   console.log('Égalité');
 } else {
-  console.log(`${scores[0][1]} a gagné`);
+  console.log(`${players[0]} a gagné`);
 }
+
 
