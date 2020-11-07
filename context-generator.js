@@ -1,31 +1,42 @@
-// Définition du nombre de joueurs et dés par joueur
-let playersNumber = 10
-let dicesPerPlayer = 8
-let facesPerDice = 9
+/* Global vars 
+Number of : players, rows, dices (per player per row), faces per dice)*/
+let playersNumber = 2
+let rowsNumber = 2
+let dicesPerPlayer = 2
+let facesPerDice = 6
 
-// Déclaration liste des 'joueurs' et table de 'scores', vides
-let players = [];
-let scores = [];
+// Set object : global score table
+let gameScore = {}
 
-// Déclaration fonction 'résultat d'un dé'
+// Function : result of one rolled dice
 const rollDice = dice => Math.floor(Math.random() * facesPerDice) + 1
 
-// Pour chaque joueur
+// For each player
 for (let i = 0; i < playersNumber; i++){
-  // Ajout du joueur dans liste des 'joueurs'
-  players.push('joueur '+i);
-  // Création table de scores du joueur
-  let playerScoreTable = []
-  // Pour chaque dé (par joueur)
-  for (let j = 0; j < dicesPerPlayer; j++){  
-    // Ajout de ses lancés dans sa table de score
-    playerScoreTable.push(rollDice(j))       
+  // Define player name
+  gameScore['Player ' + i] = 'Player ' + i
+  // Set arrays to stock all dices of player
+  let scorePlayer = []
+  // For each row
+  for (let j = 0; j < rowsNumber; j++){  
+    // Set arrays to stock all dices of player
+    let scoreRow = []
+    // For each dice per player
+    for (let k = 0; k < dicesPerPlayer; k++){  
+      // Launch a dice & get result
+      scoreRow.push(rollDice(k))    
+    }
+    // Save Row Score
+    gameScore['Player ' + i + ' row ' + j] = scoreRow
+    scorePlayer.push(scoreRow)
   }
-  // Ajout de sa table de score à la table scores globale
-  scores.push(playerScoreTable)
+  // Save Player Score
+  gameScore['Player ' + i +  ' score'] = scorePlayer 
 } 
 
-//console.table(players)
+console.log(gameScore)
+
 for (let i = 0; i < playersNumber; i++){
-  console.log(`dés du ${players[i]} : ${scores[i]}`)
+  console.log(`${gameScore['Player ' + i]} a obtenu les dés : ${gameScore['Player ' + i +  ' score']}`)
 }
+
