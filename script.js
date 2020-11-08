@@ -1,10 +1,13 @@
-/* Note de version
+/* Notes de version
 
-MISSING :
+MISSING
+-------
 
 1)  Fonction de comparaison de résultat et de définition du gagnant, par row & à la partie (idée pour plus tard : affrontement au dé, calcul des résultats )
 
-IMPROVE : 
+
+IMPROVE
+-------
 
 1)  La logique Players > Rows > Dices utilisée ne convient par à la construction dynamique d'un tableau (code commenté en bas de page). 
     -> Piste : Essayer Rows > Players > Dices ?
@@ -14,6 +17,7 @@ IMPROVE :
     J'ai transformé ces variables comme arguments des fonctions de jeu (playGame displayAllDices) mais ils doivent être passés pour chacune des fonctions
     -> Remind : Y-a-t-il une meilleure solution ?
     -> Piste : Higher Older Functions ?
+
 */
 
 
@@ -61,6 +65,8 @@ const displayAllDices = (players, rows, dices, faces) => {
 
 
 /*
+DISPLAY GAME RESULTS (HTML TABLE)
+
 const displayScoreTable = (players, rows, dices) => {
   document.write('<table> <tr> <th> </th>')
   for (let i = 0; i < players; i++){
@@ -70,5 +76,19 @@ const displayScoreTable = (players, rows, dices) => {
     for (let j = 0; j < rows; j++){
     }
   }
+}
+*/
+
+
+/*
+(SAVED) OLD SCORE COMPARISON 
+
+// Compare le scores de dé chaque joueur + annonce le vainqueur ou égalité
+if (scores[0] > scores[1]) {
+  console.log(`${players[0]} a gagné`);
+} else if (scores[0] === scores[1]){
+  console.log('Égalité');
+} else {
+  console.log(`${players[0]} a gagné`);
 }
 */
