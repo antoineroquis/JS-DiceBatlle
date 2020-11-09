@@ -1,52 +1,68 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>Titre de la page</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-</head>
-<body>
 
-  <h1>Dice Battle</h1>
+  <head>
 
-  <section id="settings">
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 
-    <h2>Settings</h2>
+  </head>
 
-    <form name="rollForm">
-      <div>
-        <label>Players</label>
-        <input id="number" type="number" name="players" value="2">
-      </div>
-      <div>
-        <label>Rounds</label>
-        <input id="number" type="number" name="rounds" value="3">
-      </div>
-      <div>
-        <label>Dices per player</label>
-        <input id="number" type="number" name="dices" value="3">
-      </div>
-      <div>
-        <label>Faces per dice</label>
-        <input id="number" type="number" name="faces" value="6">
-      </div>
-      <div>
-        <input type="button" onClick="rollForIt()" value="Roll for it">
-      </div>
-    </form>
+  <body>
 
-  </section>
+    <h1>Dice Battle</h1>
 
-  <section id="table">
+    <section id="settings">
 
-    <h2>Game table</h2>
+      <h2>Settings</h2>
 
-    <table id="resultTable"></table>
+      <form name="rollForm">
+        <div>
+          <label>Players</label>
+          <input id="number" type="number" name="players" value="2">
+        </div>
+        <div>
+          <label>Rounds</label>
+          <input id="number" type="number" name="rounds" value="3">
+        </div>
+        <div>
+          <label>Dices per player</label>
+          <input id="number" type="number" name="dices" value="3">
+        </div>
+        <div>
+          <label>Faces per dice</label>
+          <input id="number" type="number" name="faces" value="6">
+        </div>
+        <div>
+          <input type="button" onClick="rollForIt()" value="Roll for it">
+        </div>
+      </form>
 
-    <button onClick="defineWinner()">Define winner</button>
+    </section>
 
-  </section>
+    <section id="table">
 
-</body>
+      <h2>Game table</h2>
+
+      <table id="resultTable"></table>
+
+      <button onClick="defineWinner()">Define winner</button>
+
+    </section>
+
+    <section id="results">
+
+      <h2>Final results</h2>
+
+      <div id="resultGame">And the winner is ...... (to be programed !)</div>
+
+      <button onClick="playAgain()">Play again ?</button>
+      <button onClick="changeSettings()">Change Settings</button>
+
+    </section>
+
+  </body>
+
 </html>

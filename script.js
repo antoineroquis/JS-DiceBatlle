@@ -8,7 +8,7 @@ DEBUG
 -------
 
 1)  Formulaire de saisie des paramètres du jeu + bouton lancement du jeu (A recaler, fonctionne mais retire toute la page html, balise head vide
-d
+
 IMPROVE
 -------
 1)  Les ex-variables globales (players, rounds, dices, faces) sont 100% liées au lancement d'un jeu et affichage des résultats
@@ -26,16 +26,6 @@ let gameTable = []
 
 // Function : result of one rolled dice
 const rollDice = (faces) => Math.floor(Math.random() * faces) + 1
-
-// Function : catch form values and launch playGame + printResultTable with it
-const rollForIt = () => {
-  let players = document.rollForm.players.value;
-  let rounds = document.rollForm.rounds.value;
-  let dices = document.rollForm.dices.value;
-  let faces = document.rollForm.faces.value;
-  playGame(players, rounds, dices, faces)
-  printResultTable(players, rounds, dices)
-}
 
 // Function : roll all the dices, for each player, for each round
 const playGame = (players, rounds, dices, faces) => {
@@ -106,28 +96,53 @@ const rollForIt = () => {
   document.getElementById("table").style.display = "block";
 }
 
+const defineWinner = () => {
+  document.getElementById("table").style.display = "none";
+  document.getElementById("results").style.display = "block";
+  document.getElementById('resultTable').innerHTML = "";
+}
 
-/*
-// Function : print the global result table
-const printResultTable = (players, rounds, dices) => {
-  document.write('<table> <tr> <th> </th>')
-  for (let i = 0; i < players; i++){
-    document.write('<th> player ' + (i + 1) + '</th>')
-  }
-  document.write('</tr>')
-  for (let i = 0; i < rounds; i++){
-    document.write('<tr> <td>' + gameTable[i].name + '</td>')
-    for (let j = 0; j < players; j++){
+const playAgain = () => {
+  let players = document.rollForm.players.value;
+  let rounds = document.rollForm.rounds.value;
+  let dices = document.rollForm.dices.value;
+  let faces = document.rollForm.faces.value;
+  playGame(players, rounds, dices, faces)
+  printResultTable(players, rounds, dices)
+  document.getElementById("results").style.display = "none";
+  document.getElementById("table").style.display = "block";
+}
 
-      document.write('<td>' + gameTable[i]['player ' + (j + 1)] + '</td>')
-    }
-    document.write('</tr>')
-  }
-  document.write('</table>')
+const changeSettings = () => {
+  document.getElementById("results").style.display = "none";
+  document.getElementById("settings").style.display = "block";
 }
 
 
 /*
+
+
+*/
+
+/*
+document.write('<table> <tr> <th> </th>')
+for (let i = 0; i < players; i++){
+  document.write('<th> player ' + (i + 1) + '</th>')
+}
+document.write('</tr>')
+for (let i = 0; i < rounds; i++){
+  document.write('<tr> <td>' + gameTable[i].name + '</td>')
+  for (let j = 0; j < players; j++){
+
+    document.write('<td>' + gameTable[i]['player ' + (j + 1)] + '<w/td>')
+  }
+  document.write('</tr>')
+}
+document.write('</table>')
+*/
+
+/*
+
 (SAVED : OLD SCORE DISPLAY FUNCTION)
 
 // Function : display all the dices, for each player, for each round
