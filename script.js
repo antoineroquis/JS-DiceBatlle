@@ -4,8 +4,9 @@ MISSING
 -------
 1)  Fonction de comparaison de résultat et de définition du gagnant, par round & à la partie (idée pour plus tard : affrontement au dé, calcul des résultats )
 2)  Formulaire de saisie des paramètres du jeu + bouton lancement du jeu
-3)  Maquettes + intégration clean
-3)  Front animé en Ajax
+3)  Maquettes UX + intégration clean
+4)  Front interactif Ajax
+5)  (UI + Intégration) <- déclinaison projet
 
 
 IMPROVE
