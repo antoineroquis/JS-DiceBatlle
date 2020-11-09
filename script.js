@@ -8,14 +8,14 @@ DEBUG
 -------
 
 1)  Formulaire de saisie des paramètres du jeu + bouton lancement du jeu (A recaler, fonctionne mais retire toute la page html, balise head vide
-
+d
 IMPROVE
 -------
 1)  Les ex-variables globales (players, rounds, dices, faces) sont 100% liées au lancement d'un jeu et affichage des résultats
     Dans le cas d'une application plus complète, avec fonction metas  (historique des scores, statistiques joueur...), elles ne serveraient à rien.
     J'ai transformé ces variables comme arguments des fonctions de jeu (playGame displayAllDices) mais ils doivent être passés pour chacune des fonctions
     -> Remind : Y-a-t-il une meilleure solution ?
-    -> Piste : Closures ?    
+    -> Piste : Closures ?
 2)  Maquettes UX + intégration clean
 3)  (UI + Intégration) <- déclinaison projet
 */
@@ -58,6 +58,14 @@ const playGame = (players, rounds, dices, faces) => {
   }
 }
 
+// Function : Créer un élément dans le DOM (arguments : balise de l'élément, contenu, élément parent)
+const createElement = (element, content, parent) => {
+  element = document.createElement(element);
+  element.textContent = content;
+  parent.appendChild(element);
+}
+
+/*
 // Function : print the global result table
 const printResultTable = (players, rounds, dices) => {
   document.write('<table> <tr> <th> </th>')
