@@ -4,9 +4,8 @@ MISSING
 -------
 1)  Fonction de comparaison de résultat et de définition du gagnant, par round & à la partie (idée pour plus tard : affrontement au dé, calcul des résultats )
 2)  Formulaire de saisie des paramètres du jeu + bouton lancement du jeu
-3)  Maquettes UX + intégration clean
-4)  Front interactif Ajax
-5)  (UI + Intégration) <- déclinaison projet
+3)  Front interactif Ajax
+
 
 
 IMPROVE
@@ -16,7 +15,11 @@ IMPROVE
     Dans le cas d'une application plus complète, avec fonction metas  (historique des scores, statistiques joueur...), elles ne serveraient à rien.
     J'ai transformé ces variables comme arguments des fonctions de jeu (playGame displayAllDices) mais ils doivent être passés pour chacune des fonctions
     -> Remind : Y-a-t-il une meilleure solution ?
-    -> Piste : Closures ?
+    -> Piste : Closures ?    
+2)  Maquettes UX + intégration clean
+3)  (UI + Intégration) <- déclinaison projet
+
+
 */
 
 
