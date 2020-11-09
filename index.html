@@ -8,14 +8,27 @@
 </head>
 <body>
 
-
-  <script type="text/javascript">
-
-  playGame(4, 7, 2, 6)
-
-  printResultTable(4, 7, 2)
-
-  </script>
+  <form name="rollForm">
+    <div>
+      <label>Nombre de joueurs</label>
+      <input id="number" type="number" name="players" value="2">
+    </div>
+    <div>
+      <label>Nombre de manches</label>
+      <input id="number" type="number" name="rounds" value="3">
+    </div>
+    <div>
+      <label>Nombre de dés par joueur</label>
+      <input id="number" type="number" name="dices" value="3">
+    </div>
+    <div>
+      <label>Nombre de faces par dé</label>
+      <input id="number" type="number" name="faces" value="6">
+    </div>
+    <div>
+      <input type="button" onClick="rollForIt()" value="Roll for it">
+    </div>
+  </form>
 
 
 </body>
