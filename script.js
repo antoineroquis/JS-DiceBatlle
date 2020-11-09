@@ -1,16 +1,16 @@
 /* Notes de version
-
 MISSING
 -------
 1)  Fonction de comparaison de résultat et de définition du gagnant, par round & à la partie (idée pour plus tard : affrontement au dé, calcul des résultats )
-2)  Formulaire de saisie des paramètres du jeu + bouton lancement du jeu
-3)  Front interactif Ajax
+2)  Front interactif Ajax
 
+DEBUG
+-------
 
+1)  Formulaire de saisie des paramètres du jeu + bouton lancement du jeu (A recaler, fonctionne mais retire toute la page html, balise head vide
 
 IMPROVE
 -------
-
 1)  Les ex-variables globales (players, rounds, dices, faces) sont 100% liées au lancement d'un jeu et affichage des résultats
     Dans le cas d'une application plus complète, avec fonction metas  (historique des scores, statistiques joueur...), elles ne serveraient à rien.
     J'ai transformé ces variables comme arguments des fonctions de jeu (playGame displayAllDices) mais ils doivent être passés pour chacune des fonctions
@@ -18,10 +18,7 @@ IMPROVE
     -> Piste : Closures ?    
 2)  Maquettes UX + intégration clean
 3)  (UI + Intégration) <- déclinaison projet
-
-
 */
-
 
 
 // Initialize : global game table
@@ -29,6 +26,16 @@ let gameTable = []
 
 // Function : result of one rolled dice
 const rollDice = (faces) => Math.floor(Math.random() * faces) + 1
+
+// Function : catch form values and launch playGame + printResultTable with it
+const rollForIt = () => {
+  let players = document.rollForm.players.value;
+  let rounds = document.rollForm.rounds.value;
+  let dices = document.rollForm.dices.value;
+  let faces = document.rollForm.faces.value;
+  playGame(players, rounds, dices, faces)
+  printResultTable(players, rounds, dices)
+}
 
 // Function : roll all the dices, for each player, for each round
 const playGame = (players, rounds, dices, faces) => {
@@ -51,7 +58,7 @@ const playGame = (players, rounds, dices, faces) => {
   }
 }
 
-//DISPLAY GAME RESULTS (HTML TABLE)
+// Function : print the global result table
 const printResultTable = (players, rounds, dices) => {
   document.write('<table> <tr> <th> </th>')
   for (let i = 0; i < players; i++){
@@ -66,6 +73,7 @@ const printResultTable = (players, rounds, dices) => {
     }
     document.write('</tr>')
   }
+  document.write('</table>')
 }
 
 
