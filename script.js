@@ -94,6 +94,18 @@ const printResultTable = (players, rounds, dices) => {
   }
 }
 
+// Function : catch form values and launch playGame + printResultTable with it
+const rollForIt = () => {
+  let players = document.rollForm.players.value;
+  let rounds = document.rollForm.rounds.value;
+  let dices = document.rollForm.dices.value;
+  let faces = document.rollForm.faces.value;
+  playGame(players, rounds, dices, faces)
+  printResultTable(players, rounds, dices)
+  document.getElementById("settings").style.display = "none";
+  document.getElementById("table").style.display = "block";
+}
+
 
 /*
 // Function : print the global result table
