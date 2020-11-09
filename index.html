@@ -8,28 +8,45 @@
 </head>
 <body>
 
-  <form name="rollForm">
-    <div>
-      <label>Nombre de joueurs</label>
-      <input id="number" type="number" name="players" value="2">
-    </div>
-    <div>
-      <label>Nombre de manches</label>
-      <input id="number" type="number" name="rounds" value="3">
-    </div>
-    <div>
-      <label>Nombre de dés par joueur</label>
-      <input id="number" type="number" name="dices" value="3">
-    </div>
-    <div>
-      <label>Nombre de faces par dé</label>
-      <input id="number" type="number" name="faces" value="6">
-    </div>
-    <div>
-      <input type="button" onClick="rollForIt()" value="Roll for it">
-    </div>
-  </form>
+  <h1>Dice Battle</h1>
 
+  <section id="settings">
+
+    <h2>Settings</h2>
+
+    <form name="rollForm">
+      <div>
+        <label>Players</label>
+        <input id="number" type="number" name="players" value="2">
+      </div>
+      <div>
+        <label>Rounds</label>
+        <input id="number" type="number" name="rounds" value="3">
+      </div>
+      <div>
+        <label>Dices per player</label>
+        <input id="number" type="number" name="dices" value="3">
+      </div>
+      <div>
+        <label>Faces per dice</label>
+        <input id="number" type="number" name="faces" value="6">
+      </div>
+      <div>
+        <input type="button" onClick="rollForIt()" value="Roll for it">
+      </div>
+    </form>
+
+  </section>
+
+  <section id="table">
+
+    <h2>Game table</h2>
+
+    <table id="resultTable"></table>
+
+    <button onClick="defineWinner()">Define winner</button>
+
+  </section>
 
 </body>
 </html>

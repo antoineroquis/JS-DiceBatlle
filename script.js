@@ -65,6 +65,36 @@ const createElement = (element, content, parent) => {
   parent.appendChild(element);
 }
 
+// Function : print the global result table -> Create Element version
+const printResultTable = (players, rounds, dices) => {
+  // Create heading row line (within table id="resultTable")
+  createElement('tr', '', resultTable);
+  // Variable to aim the heanding row
+  let row = document.getElementById('resultTable').getElementsByTagName( 'tr' )[0];
+  // Create empty table heading (within heading row)
+  createElement('th', '', row);
+  // For each player
+  for (let i = 0; i < players; i++){
+    // Create table heading containing player name (within heading row)
+    createElement('th', 'player ' + (i + 1), row);
+  }
+  // For each round
+  for (let i = 0; i < rounds; i++){
+    // Create row line (within table id="resultTable")
+    createElement('tr', '', resultTable);
+    // Variable to aim each round row
+    let row = document.getElementById('resultTable').getElementsByTagName( 'tr' )[i + 1];
+    // Create table cell containing round name (within round row)
+    createElement('td', gameTable[i].name, row);
+    // For each player
+    for (let j = 0; j < players; j++){
+      // Create table cell with containing player score (within round row)
+      createElement('td', gameTable[i]['player ' + (j + 1)], row);
+    }
+  }
+}
+
+
 /*
 // Function : print the global result table
 const printResultTable = (players, rounds, dices) => {
