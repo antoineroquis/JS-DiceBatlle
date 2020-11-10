@@ -1,0 +1,23 @@
+table{
+  border:1px solid gray;
+}
+
+
+table th{
+  width:100px;
+  background-color: black;
+  border:none;
+  color: white;
+  font-weight:bold;
+  text-align:center;
+}
+
+table td{
+  width:100px;
+  text-align:center;
+  border:none;
+}
+
+#table, #results{
+  display:none;
+}

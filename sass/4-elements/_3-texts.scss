@@ -1,0 +1,48 @@
+a{
+  color: $color-main;
+  font-weight: $light;
+  text-decoration:none;
+  &:hover{
+    //text-decoration: underline;
+  }
+}
+
+p{
+  line-height: 1.4;
+  margin-bottom: 13px;
+}
+
+strong{
+  font-weight: $medium;
+}
+
+em{
+
+}
+
+i{
+
+}
+
+ol{
+  margin-bottom:10px;
+  list-style: decimal;
+  padding-left: 20px;
+  li{
+    font-weight:$medium;
+    margin-bottom:5px;
+    padding-left: 7px;
+    >em{
+      font-weight:$light;
+    }
+  }
+}
+ul{
+  margin-bottom:10px;
+  list-style: disc;
+  padding-left: 20px;
+  li{
+    margin-bottom:5px;
+    padding-left: 7px;
+  }
+}

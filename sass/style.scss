@@ -1,0 +1,51 @@
+// compileCompressed: ../$1.css
+/*
+Theme Name: Makewaves
+Theme URI: ....
+Author: Makewaves Studio
+Author URI:
+Description: Le thème HQ du studio Makewaves
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+Text Domain:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+//ITCSS Structure
+
+
+//1-SETTINGS
+@import '1-settings/1-fonts-styles';
+@import '1-settings/2-fonts-setup';
+@import '1-settings/3-colors';
+@import '1-settings/4-breakpoints';
+
+
+@import '2-tools/1-mixins-transforms';
+@import '2-tools/2-mixins-boxes';
+@import '2-tools/3-mixins-gradients';
+@import '2-tools/4-mixins-ul-unstyle';
+
+//3-GENERIC
+@import '3-generic/1-reset';
+@import '3-generic/2-reset-box-sizing';
+
+//4-ELEMENT
+@import '4-elements/1-html-body';
+@import '4-elements/2-headings';
+@import '4-elements/3-texts';
+@import '4-elements/5-medias';
+@import '4-elements/6-table';
+
+//5-OBJECTS
+@import '5-objects/1-wrapper';
+
+
+//6-COMPONENT
+
+
+//7-UTILITIES
