@@ -85,7 +85,13 @@ const printResultTable = (players, rounds, dices) => {
 }
 
 // Function : catch form values and launch playGame + printResultTable with it
-const rollForIt = () => {
+const letsPlay = () => {
+  document.getElementById("splash").style.display = "none";
+  document.getElementById("settings").style.display = "block";
+}
+
+// Function : catch form values and launch playGame + printResultTable with it
+const startGame = () => {
   let players = document.rollForm.players.value;
   let rounds = document.rollForm.rounds.value;
   let dices = document.rollForm.dices.value;
@@ -93,13 +99,13 @@ const rollForIt = () => {
   playGame(players, rounds, dices, faces)
   printResultTable(players, rounds, dices)
   document.getElementById("settings").style.display = "none";
-  document.getElementById("table").style.display = "block";
+  document.getElementById("gameTable").style.display = "block";
 }
 
-const defineWinner = () => {
-  document.getElementById("table").style.display = "none";
-  document.getElementById("results").style.display = "block";
+const launchGame = () => {
+  document.getElementById("gameTable").style.display = "none";
   document.getElementById('resultTable').innerHTML = "";
+  document.getElementById("gameScores").style.display = "block";
 }
 
 const playAgain = () => {
@@ -109,13 +115,13 @@ const playAgain = () => {
   let faces = document.rollForm.faces.value;
   playGame(players, rounds, dices, faces)
   printResultTable(players, rounds, dices)
-  document.getElementById("results").style.display = "none";
-  document.getElementById("table").style.display = "block";
+  document.getElementById("gameTable").style.display = "block";
+  document.getElementById("gameScores").style.display = "none";
 }
 
 const changeSettings = () => {
-  document.getElementById("results").style.display = "none";
   document.getElementById("settings").style.display = "block";
+  document.getElementById("gameScores").style.display = "none";
 }
 
 

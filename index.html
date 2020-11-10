@@ -7,61 +7,71 @@
     <title>Titre de la page</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
 
   </head>
 
   <body>
 
-    <h1>Dice Battle</h1>
+    <div class="o-wrapper">
 
-    <section id="settings">
+      <section id="splash" class="c-splash">
 
-      <h2>Settings</h2>
+        <h1>Dice Battle</h1>
+        <p>Version 1.0</p>
+        <button class="c-button" onClick="letsPlay()">Let's Play !</button>
 
-      <form name="rollForm">
-        <div>
-          <label>Players</label>
-          <input id="number" type="number" name="players" value="2">
-        </div>
-        <div>
-          <label>Rounds</label>
-          <input id="number" type="number" name="rounds" value="3">
-        </div>
-        <div>
-          <label>Dices per player</label>
-          <input id="number" type="number" name="dices" value="3">
-        </div>
-        <div>
-          <label>Faces per dice</label>
-          <input id="number" type="number" name="faces" value="6">
-        </div>
-        <div>
-          <input type="button" onClick="rollForIt()" value="Roll for it">
-        </div>
-      </form>
+      </section>
 
-    </section>
+      <section id="settings" class="c-settings">
 
-    <section id="table">
+        <h2>Settings</h2>
+        <p>Please set the game as you want</p>
 
-      <h2>Game table</h2>
+        <form class="c-rollForm" name="rollForm">
+          <div>
+            <label>Players ?</label>
+            <input type="number" name="players" value="2">
+          </div>
+          <div>
+            <label>Rounds ?</label>
+            <input type="number" name="rounds" value="3">
+          </div>
+          <div>
+            <label>Dices ? <span>per player</span></label>
+            <input type="number" name="dices" value="3">
+          </div>
+          <div>
+            <label>Faces ? <span>per dice</span></label>
+            <input type="number" name="faces" value="6">
+          </div>
+          <div>
+            <input class="c-button" type="button" onClick="startGame()" value="Start Game">
+          </div>
+        </form>
 
-      <table id="resultTable"></table>
+      </section>
 
-      <button onClick="defineWinner()">Define winner</button>
+      <section id="gameTable" class="c-gameTable">
 
-    </section>
+        <h2>Game table</h2>
 
-    <section id="results">
+        <table id="resultTable"></table>
 
-      <h2>Final results</h2>
+        <button class="c-button" onClick="launchGame()">Show game scores</button>
 
-      <div id="resultGame">And the winner is ...... (to be programed !)</div>
+      </section>
 
-      <button onClick="playAgain()">Play again ?</button>
-      <button onClick="changeSettings()">Change Settings</button>
+      <section id="gameScores" class="c-gameScores">
 
-    </section>
+        <h2>Game scores</h2>
+
+        <button class="c-button" onClick="playAgain()">Play again ?</button>
+        <button class="c-button--alt" onClick="changeSettings()">Change Settings</button>
+
+      </section>
+
+    </div>
 
   </body>
 
