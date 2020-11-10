@@ -1,0 +1,40 @@
+.c-settings{
+  display:none;
+  h2,p{
+    text-align:center;
+  }
+}
+
+
+.c-rollForm{
+  div{
+    display: block;
+    width: 160px;
+    margin: 10px auto;
+    &:last-child{
+      width:auto;
+    }
+    label{
+      width: 110px;
+      display: inline-block;
+      position:relative;
+      span{
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        font-size: 0.6em;
+        font-style: italic;
+        opacity: 0.45;
+      }
+    }
+    input[type="number"]{
+      display: inline-block;
+      width: 44px;
+      height: 34px;
+      text-align: center;
+      font-size: 1.2em;
+      vertical-align: sub;
+      font-family:$font-alt;
+    }
+  }
+}
